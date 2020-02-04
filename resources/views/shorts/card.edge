@@ -1,0 +1,38 @@
+<div class="card bg-dark">
+  <div class="card-header">
+    <h2>
+      <strong>Url Shortener</strong>
+    </h2>
+  </div>
+  <div class="card-body">
+    <p>Enter the url you would like to have shortened</p>
+    @if(flashMessage('linkUrl'))
+      <h1 class="bg-green" style="text-align:center;">Your one time link is: <br><strong>{{ flashMessage('linkUrl') }}</strong></h1>
+    @endif
+    @if(flashMessage('error'))
+      <h1 class="bg-red" style="text-align:center;">{{ flashMessage('error') }}</h1>
+    @endif
+    <form method="POST" action="/shorts">
+      {{ csrfField() }}
+      <label for="url">URL</label>
+      <div class="input-group mb-3">
+        <input type="url" name="url" class="form-control" placeholder="Enter URL" aria-label="Enter URL" aria-describedby="button-addon2" value="{{ old('short', '')}}" autocomplete="off">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" tabindex="-1"><svg class="lnr lnr-link"><use xlink:href="#lnr-link"></use></svg></button>
+        </div>
+      </div>    
+      <label for="Captcha">Captcha</label>
+      <div class="input-group mb-3">
+        <input type="text" name="captcha" class="form-control" placeholder="" aria-label="Captcha" aria-describedby="button-addon2" value="" autocomplete="off">
+        <div class="input-group-append" tabindex="-1">
+          <img src="/captcha/{{ ts }}" />
+        </div>
+      </div> 
+      <input type="hidden" name="tool" value="shorts"/>
+      <input type="hidden" name="ts" value="{{ ts }}" />
+      <div class="input-group mb-3 mx-auto d-flex">
+        <button class="btn btn-outline-secondary" style="background:#2ecc71; font-size: 20px;" type="submit" value="Save">Get Link</button>
+      </div>  
+    </form>
+  </div>
+</div>

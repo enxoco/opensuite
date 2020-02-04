@@ -1,0 +1,66 @@
+<div class="container">
+
+  <div class="row pt-5">
+    <div class="col-6">
+
+      <div class="editor">
+        <code><strong><i>start/routes.js</i></strong>
+          'use strict'
+
+          /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
+          const Route = use('Route')
+
+          Route.get('/shorts', 'CaptchaController.ShortIndex')
+          Route.get('/s/:id', 'ShortController.GetShort')
+          Route.post('/shorts', 'ShortController.PostShort')
+          Route.get('/captcha/:ts', 'CaptchaController.GetCaptcha')
+          Route.on('/').render('welcome')
+
+
+        </code>
+      </div>
+    </div>
+    <div class="col-6 mx-auto">
+      <h1 class="pl-4 pb-5">Routes<br></h1>
+
+      <ul class="code-doc">
+        <p class="description">There are 3 routes specifically related to openShorts.</p>
+
+        <li class="my-3"><span class="lnr lnr-chevron-right"></span><code>/shorts</code> - <code>GET</code> route to display the
+          single view for openShorts</li>
+        <li class="my-3"><span class="lnr lnr-chevron-right"></span><code>/shorts</code> - <code>POST</code> route to verify the
+          captcha and create a short link</li>
+        <li class="my-3"><span class="lnr lnr-chevron-right"></span><code>/s/:id</code> - <code>GET</code> route that looks up the
+          short link as referenced by :id. If link exists, simply redirects user to original url.</li>
+      </ul>
+
+    </div>
+
+  </div>
+  <!--/row-->
+
+
+
+  <div class="row pt-5 mt-5">
+    <div class="col-6">
+      <h1 class="pl-4 pb-5">Controller<br></h1>
+
+      <ul class="code-doc">
+        <p class="description">There are two controller methods specifically related to openShorts.</p>
+
+        <li class="my-3"><span class="lnr lnr-chevron-right"></span><code>PostShort</code> - Handles the form submission, verifies the captcha and returns a response.  If the captcha is correct, the entered url is assigned a unique id and entered into a Redis store.    If the captcha does not match, the user is shown an error message.</li>
+        <li class="my-3"><span class="lnr lnr-chevron-right"></span><code>GetShort</code> - Pulls the id off of the query string and checks it against the store.  If the id is valid, the long url is returned and the user is transparently redirected.</li>
+      </ul>
+
+
+    </div>
+    <div class="col-6 mx-auto">
+
+      <img src="/images/oshort/controller.jpg" style="height:600px;width:700px;object-fit:contain;"/>
+    </div>
+
+  </div>
+  <!--/row-->
+
+</div>
+<!--/container-->

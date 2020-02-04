@@ -1,0 +1,238 @@
+body {
+    font-family: 'ChatypeB2.1MediumMedium';
+    color: #353b48;
+}
+
+.hero {
+    height: 500px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background: url('https://images.unsplash.com/photo-1481277542470-605612bd2d61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1295&q=80');
+      background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    padding: 200px;
+  }
+  .hero-overlay {
+      height: 500px;
+      left: 0;
+      right: 0;
+      position: absolute;
+      background-color: #273c7569;
+      z-index: 9;
+  }
+
+  .hero-heading, h3 {
+      text-align: center;
+      position: relative;
+      z-index: 999;
+      color: white;
+    }
+
+    .pretext {
+        position: relative;
+        top: 15px;
+        text-transform: capitalize;
+        z-index: 11;
+        color: white;
+    }
+    .section-one {
+        position: absolute;
+        top: 550px;
+        left: 0;
+        right: 0;
+        
+        z-index: 99;
+        padding-top: 50px;
+    }
+    svg#adc953c4-1f1c-4de2-8e29-bb7913a5554f {
+        height: 400px;
+        width: auto;
+        position: relative;
+        left: 100px;
+        top: -95px;
+    }
+    svg#0b9b7173-8d17-4004-875f-329f7c0a9383 {
+        height: 400px;
+        width: auto;
+        position: relative;
+        top: -95px;
+        left: 19px;
+    }
+
+    .our-mission-image-wrapper {
+        position: relative;
+        top: -100px;
+    }
+
+    .bg-red {
+        background: #e84118;
+        color:#f5f6fa;
+    }
+    .bg-yellow {
+        background-color: #fbc531;
+        color: #273c75;
+    }
+
+    .gallery-wrapper img {
+        height: 500px;
+        width: 500px;
+        object-fit: cover;
+        object-position: center;
+        position: relative;
+        top: 0px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 10px 0px #353b48;
+
+    }
+
+    .up-100 {
+        position: relative;
+        top: -80px;
+    }
+
+    .editor {
+        background: #32383d;
+        padding: 20px;
+    }
+    .editor code {
+        color: #2ecc71;
+    }
+
+    input[type="url"] {
+        height: 50px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .captcha input {
+        width: 300px;
+        padding-left: 20px;
+    }
+    button.btn-submit.mt-3 {
+        background: #273c75;
+        padding: 15px;
+        width: 300px;
+        border-radius: 10em;
+        color: white;
+        font-size: 30px;
+    }
+
+    .card.card-shadow {
+        box-shadow: 0px 0px 5px 2px gainsboro;
+    }
+
+    .bg-textured {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='24' viewBox='0 0 88 24'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='autumn' fill='%239b59b6' fill-opacity='0.05'%3E%3Cpath d='M10 0l30 15 2 1V2.18A10 10 0 0 0 41.76 0H39.7a8 8 0 0 1 .3 2.18v10.58L14.47 0H10zm31.76 24a10 10 0 0 0-5.29-6.76L4 1 2 0v13.82a10 10 0 0 0 5.53 8.94L10 24h4.47l-6.05-3.02A8 8 0 0 1 4 13.82V3.24l31.58 15.78A8 8 0 0 1 39.7 24h2.06zM78 24l2.47-1.24A10 10 0 0 0 86 13.82V0l-2 1-32.47 16.24A10 10 0 0 0 46.24 24h2.06a8 8 0 0 1 4.12-4.98L84 3.24v10.58a8 8 0 0 1-4.42 7.16L73.53 24H78zm0-24L48 15l-2 1V2.18A10 10 0 0 1 46.24 0h2.06a8 8 0 0 0-.3 2.18v10.58L73.53 0H78z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .bg-dark {
+        background: #34495e;
+        color: #ecf0f1;
+      }
+      
+      .btn-submit-green {
+        background: #2ecc71;
+        color:white;
+        padding: 10px 20px;
+        border-radius: 10px;
+        border: 0px;
+        width: 100%;
+        font-size: 30px;
+      }
+
+      .bg-green {
+        background: #2ecc71;
+
+      }
+
+/* Add the following CSS block to your own
+stylesheet. */
+.lnr {
+    display: inline-block;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.05em;
+  }
+  
+  span.password-list.bg-dark {
+    font-weight: 300;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid gainsboro;
+    font-size: 18px;
+  }
+  
+  span.password-list.bg-dark:hover {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color:#2ecc71;
+    text-decoration: none;
+  }
+  
+  .hover-white:hover {
+    color: white !important;
+  }
+  
+  .password-list-wrapper {
+    height: 550px;
+    overflow-y: scroll;
+    width: 450px;
+  }
+  
+  html, .password-list-wrapper {
+    --scrollbarBG:#34495e;
+    --thumbBG: #343a40;
+  }
+  
+  body::-webkit-scrollbar, .password-list-wrapper::-webkit-scrollbar {
+    width: 20px;
+    
+  }
+  body, .password-list-wrapper  {
+    scrollbar-width: thick;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-track , .password-list-wrapper::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+  }
+  body::-webkit-scrollbar-thumb, .password-list-wrapper::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG) ;
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+  }
+  
+  button.btn.btn-outline-secondary {
+    background: #3498db;
+    color: white;
+  }
+  
+  
+  .password-list:hover {
+    text-decoration: none;
+    color: #3498db;
+  
+  }
+  input[name=captcha] {
+    min-height: 75px;
+}
+
+.editor code {
+  color: #2ecc71;
+  white-space: pre-line;
+}
+span.lnr.lnr-chevron-right {
+  font-weight: 800;
+  width: 25px;
+  color: #2ecc71;
+}
