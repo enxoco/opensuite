@@ -29,7 +29,7 @@ class ShortController {
         await Redis.set(urlStr, short)
 
         session.flash({ linkUrl: `https://nxone.co/s/${urlStr}` })
-        if (!captcha && !ts) {
+        if (uPath.includes('api')) {
             return response.json({ 'url': urlStr })
         }
         return response.redirect('back')
