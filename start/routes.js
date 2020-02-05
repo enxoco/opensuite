@@ -51,5 +51,8 @@ Route.post('/snaps', 'SnapController.PostSnap')
 |*/
 Route.get('/captcha/:ts', 'CaptchaController.GetCaptcha')
 Route.on('/tech').render('tech')
+Route.get('/contact', 'CaptchaController.GetContactForm')
+Route.post('/contact', 'ContactController.PostContactForm')
+
 Route.on('/').render('welcome')
 

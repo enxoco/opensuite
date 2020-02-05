@@ -22,6 +22,9 @@ class CaptchaController {
         await Redis.set(ts, hash)
         return response.send(buffer)
     }
+    async GetContactForm({ request, response, view }) {
+        return view.render('contact', {ts})
+    }
 }
 
 module.exports = CaptchaController

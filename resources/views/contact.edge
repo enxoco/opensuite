@@ -4,8 +4,13 @@
     @!include('home.hero')
 
     <div class="section-one">
-      @!include('tech.hero')
-    
+      <div class="row">
+        <div class="col-5 mx-auto">
+          <h1 class="text-center">Questions, comments, suggestions?</h1>
+          <p class="text-center">We are always looking for feedback and new ideas.  Let's start a conversation.</p>
+    @!include('contact-card')
+        </div>
+      </div>
       <footer class="footer">
         <div class="container my-5">
           <p class="description"><code>Copyright 2020 Enxo LLC<br>Built and maintained by <a href="https://iliveinaterminal.com">Mike Conrad</a> Using the <code><a href="https://adonisjs.com">AdonisJS</a> framework<br> Stay tuned...</code></p>

@@ -3,8 +3,7 @@ const Hashids = require('hashids/cjs')
 const hashids = new Hashids("one-time-secret", 2, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
 const Encryption = use('Encryption')
 const Redis = use('Redis')
-const captcha = require('trek-captcha')
-const ts = Date.now()
+
 
 class SnapController {
 

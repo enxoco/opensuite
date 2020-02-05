@@ -1,0 +1,48 @@
+<div class="card bg-dark">
+    <div class="card-header">
+      <h2>
+        <strong>Contact Us</strong>
+      </h2>
+    </div>
+    <div class="card-body">
+        @if(flashMessage('error'))
+        <h1 class="text-red">{{ flashMessage('error') }}</h1>
+        @elseif(flashMessage('success'))
+        <h1 class="text-green">{{ flashMessage('success') }}</h1>
+        @endif
+      <form method="POST" action="/contact">
+        {{ csrfField() }}
+        <label for="name">Enter your name</label>
+        <div class="input-group mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" aria-label="Captcha" aria-describedby="button-addon2" value="" autocomplete="off">
+            <div class="input-group-append" tabindex="-1">
+                <a class="btn btn-secondary bg-green"><span class="lnr lnr-user"></span></a>
+            </div>
+          </div>     
+          <label for="email">Enter your email</label>
+          <div class="input-group mb-3">
+              <input type="email" name="email" class="form-control" placeholder="Your Email" aria-label="Captcha" aria-describedby="button-addon2" value="" autocomplete="off">
+              <div class="input-group-append" tabindex="-1">
+                <a class="btn btn-secondary bg-green"><span class="lnr lnr-bullhorn"></span></a>
+              </div>
+            </div>   
+          <label for="message">Enter your message</label>
+          <div class="input-group mb-3">
+              <textarea name="message" class="form-control"></textarea>
+ 
+            </div>     
+        <label for="Captcha">Captcha</label>
+        <div class="input-group mb-3">
+          <input type="text" name="captcha" class="form-control" placeholder="" aria-label="Captcha" aria-describedby="button-addon2" value="" autocomplete="off">
+          <div class="input-group-append" tabindex="-1">
+            <img src="/captcha/{{ ts }}" />
+          </div>
+        </div> 
+        <input type="hidden" name="tool" value="contact"/>
+        <input type="hidden" name="ts" value="{{ ts }}" />
+        <div class="input-group mb-3 mx-auto d-flex">
+          <button class="btn btn-outline-secondary bg-green float-right" style="font-size: 20px;" type="submit" value="Save">Submit <span class="lnr lnr-rocket"></span></button>
+        </div>  
+      </form>
+    </div>
+  </div>
