@@ -12,7 +12,7 @@ class ShortController {
         let solution = Encryption.decrypt(hash)
         if (captcha && ts) {
             if (captcha != solution) {
-                session.flash({ error: 'Captcha does not match.<br>Please Try Again' })
+                session.flash({ error: 'Captcha does not match.  Please Try Again' })
                 return response.redirect('back')
             }
         }
@@ -22,7 +22,7 @@ class ShortController {
         const urlStr = hashids.encode(Number(id))
         await Redis.set(urlStr, short)
 
-        session.flash({ linkUrl: `${request.headers().origin}/s/${urlStr}` })
+        session.flash({ linkUrl: `https://nxone.co/s/${urlStr}` })
         if (!captcha && !ts) {
             return response.json({ 'url': urlStr })
         }

@@ -14,9 +14,9 @@
     @endif
     <form method="POST" action="/shorts">
       {{ csrfField() }}
-      <label for="url">URL</label>
+      <label for="short">URL</label>
       <div class="input-group mb-3">
-        <input type="url" name="url" class="form-control" placeholder="Enter URL" aria-label="Enter URL" aria-describedby="button-addon2" value="{{ old('short', '')}}" autocomplete="off">
+        <input type="url" name="short" class="form-control" placeholder="Enter URL" aria-label="Enter URL" aria-describedby="button-addon2" value="{{ old('short', '')}}" autocomplete="off">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button" tabindex="-1"><svg class="lnr lnr-link"><use xlink:href="#lnr-link"></use></svg></button>
         </div>
