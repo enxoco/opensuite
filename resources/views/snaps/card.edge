@@ -1,0 +1,45 @@
+<div class="card bg-dark">
+  <div class="card-header">
+    <h2>
+      <strong>Self Destructing Messages</strong>
+    </h2>
+  </div>
+  <div class="card-body">
+    @if(secret)
+    {{ secret }}
+    <hr class="mb-4">
+    <a class="btn btn-submit-green" href="/snaps">Create Message</a>
+    @else
+    <p>Enter the url you would like to have shortened</p>
+    @if(flashMessage('success'))
+      <h1 class="text-green" style="text-align:center;">Your one time link is: <br><strong>{{ flashMessage('success') }}</strong></h1>
+    @endif
+    @if(flashMessage('error'))
+      <h1 class="bg-red" style="text-align:center;">{{ flashMessage('error') }}</h1>
+    @endif
+    <form method="POST" action="/snaps">
+      {{ csrfField() }}
+      <label for="secret">Enter your message</label>
+      <div class="input-group mb-3">
+@if(flashMessage('secret'))
+<textarea name="secret" class="form-control">{{ flashMessage('secret') }}</textarea>
+      @else
+      <textarea name="secret" class="form-control"></textarea>
+        @endif
+      </div>    
+      <label for="Captcha">Captcha</label>
+      <div class="input-group mb-3">
+        <input type="text" name="captcha" class="form-control" placeholder="" aria-label="Captcha" aria-describedby="button-addon2" value="" autocomplete="off">
+        <div class="input-group-append" tabindex="-1">
+          <img src="/captcha/{{ ts }}" />
+        </div>
+      </div> 
+      <input type="hidden" name="tool" value="snaps"/>
+      <input type="hidden" name="ts" value="{{ ts }}" />
+      <div class="input-group mb-3 mx-auto d-flex">
+        <button class="btn btn-outline-secondary" style="background:#2ecc71; font-size: 20px;" type="submit" value="Save">Get Link</button>
+      </div>  
+    </form>
+    @endif
+  </div>
+</div>

@@ -12,6 +12,10 @@ class CaptchaController {
         return view.render('shorts.home', { ts })
     }
 
+    async SnapIndex({ view }) {
+        return view.render('snaps.home', {ts})
+    }
+
     async GetCaptcha({ request, response }) {
         const { token, buffer } = await captcha()
         let hash = Encryption.encrypt(token)

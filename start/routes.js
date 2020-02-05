@@ -25,6 +25,20 @@ Route.get('/shorts', 'CaptchaController.ShortIndex')
 Route.get('/s/:id', 'ShortController.GetShort')
 Route.post('/shorts', 'ShortController.PostShort')
 
+
+
+/*
+|
+|--------------------------------------------------------------------------
+| OpenSnaps Routes
+|--------------------------------------------------------------------------
+|
+|*/
+
+Route.get('/snaps', 'CaptchaController.SnapIndex')
+Route.get('/snaps/:id', 'SnapController.GetSnap')
+Route.post('/snaps', 'SnapController.PostSnap')
+
 /*
 |
 |--------------------------------------------------------------------------
@@ -36,5 +50,6 @@ Route.post('/shorts', 'ShortController.PostShort')
 |
 |*/
 Route.get('/captcha/:ts', 'CaptchaController.GetCaptcha')
+Route.on('/tech').render('tech')
 Route.on('/').render('welcome')
 
