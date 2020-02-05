@@ -6,16 +6,22 @@ const Redis = use('Redis')
 
 class ShortController {
 
+
     async PostShort({ request, response, session }) {
         const { short, captcha, ts } = request.all()
+        const uPath = request.url()
+
         let hash = await Redis.get(ts)
         let solution = Encryption.decrypt(hash)
-        if (captcha && ts) {
-            if (captcha != solution) {
-                session.flash({ error: 'Captcha does not match.  Please Try Again' })
-                return response.redirect('back')
+        if (!uPath.includes('api')){
+            if (captcha && ts) {
+                if (captcha != solution) {
+                    session.flash({ error: 'Captcha does not match.  Please Try Again' })
+                    return response.redirect('back')
+                }
             }
         }
+
 
         Redis.del(ts)
         const id = await Redis.get('hits')

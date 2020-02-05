@@ -8,7 +8,8 @@ const ts = Date.now()
 
 class CaptchaController {
 
-    async ShortIndex({ view }) {
+    async ShortIndex({ request, view }) {
+
         return view.render('shorts.home', { ts })
     }
 
