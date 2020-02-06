@@ -10,6 +10,8 @@ const Server = use('Server')
 |
 | Global middleware are executed on each http request only when the routes
 | match.
+| 
+| Captcha Middle simply creates and validates captchas for form submissions
 |
 */
 const globalMiddleware = [
@@ -18,6 +20,8 @@ const globalMiddleware = [
   'Adonis/Middleware/Shield',
   'Adonis/Middleware/AuthInit',
   'App/Middleware/ConvertEmptyStringsToNull',
+  'App/Middleware/ViewGlobal',
+  'App/Middleware/Captcha'
 ]
 
 /*

@@ -12,13 +12,7 @@ class SnapController {
         const { secret, captcha, ts } = request.all()
         let hash = await Redis.get(ts)
         let solution = Encryption.decrypt(hash)
-
-
-        if (captcha != solution) {
-            session.flash({ secret: secret})
-            session.flash({ error: 'Captcha does not match.  Please Try Again'})
-            return response.redirect('back')
-        } 
+        
         Redis.del(ts)
         const id = await Redis.get('hits')
         const urlStr = hashids.encode(Number(id))

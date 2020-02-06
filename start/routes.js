@@ -21,9 +21,9 @@ const Route = use('Route')
 |
 |*/
 
-Route.get('/shorts', 'CaptchaController.ShortIndex')
 Route.get('/s/:id', 'ShortController.GetShort')
 Route.post('/shorts', 'ShortController.PostShort')
+Route.on('/shorts').render('shorts.home')
 
 
 
@@ -35,9 +35,9 @@ Route.post('/shorts', 'ShortController.PostShort')
 |
 |*/
 
-Route.get('/snaps', 'CaptchaController.SnapIndex')
 Route.get('/snaps/:id', 'SnapController.GetSnap')
 Route.post('/snaps', 'SnapController.PostSnap')
+Route.on('/snaps').render('snaps.home')
 
 /*
 |
@@ -51,8 +51,8 @@ Route.post('/snaps', 'SnapController.PostSnap')
 |*/
 Route.get('/captcha/:ts', 'CaptchaController.GetCaptcha')
 Route.on('/tech').render('tech')
-Route.get('/contact', 'CaptchaController.GetContactForm')
 Route.post('/contact', 'ContactController.PostContactForm')
+Route.on('/contact').render('contact')
 
 Route.on('/').render('welcome')
 
