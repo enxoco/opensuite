@@ -258,3 +258,12 @@ span.heading {
 .object-position-right {
   object-position: right !important;
 }
+
+span.heading-small {
+  font-size: 1.75rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 999;
+  color: white;
+}

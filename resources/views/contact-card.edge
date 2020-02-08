@@ -35,13 +35,13 @@
         <div class="input-group mb-3">
           <input type="text" name="captcha" class="form-control" placeholder="" aria-label="Captcha" aria-describedby="button-addon2" value="" autocomplete="off">
           <div class="input-group-append" tabindex="-1">
-            <img src="/captcha/{{ ts }}" alt="Captcha Field"/>
+            <img src="{{ captchaGif }}" alt="Captcha Field"/>
           </div>
         </div> 
         <input type="hidden" name="tool" value="contact"/>
-        <input type="hidden" name="ts" value="{{ ts }}" />
+        <input type="hidden" name="ts" value="{{ captchaId }}" />
         <div class="input-group mb-3 mx-auto d-flex">
-          <button class="btn btn-outline-secondary bg-green float-right" style="font-size: 20px;" type="submit" value="Save">Submit <span class="lnr lnr-rocket"></span></button>
+          <button class="btn btn-secondary bg-green float-right" style="font-size: 20px;" type="submit" value="Save">Submit <span class="lnr lnr-rocket"></span></button>
         </div>  
       </form>
     </div>
