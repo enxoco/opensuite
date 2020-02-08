@@ -10,7 +10,6 @@
     <hr class="mb-4">
     <a class="btn btn-submit-green" href="/snaps">Create Message</a>
     @else
-    <p>Enter the url you would like to have shortened</p>
     @if(flashMessage('success'))
       <span class="heading text-green" style="text-align:center;">Your one time link is: <br><strong>{{ flashMessage('success') }}</strong></span>
     @endif
