@@ -35,6 +35,7 @@ class Captcha {
     let id = encodedData.slice(0, 50)
 
     await Redis.set(id, hash)
+    await Redis.expire(id, 60)
 
     View.global('test', () => {
       this.safe('<input />')
