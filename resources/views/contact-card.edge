@@ -6,9 +6,9 @@
     </div>
     <div class="card-body">
         @if(flashMessage('error'))
-        <h1 class="text-red">{{ flashMessage('error') }}</h1>
+        <span class="heading text-red">{{ flashMessage('error') }}</span>
         @elseif(flashMessage('success'))
-        <h1 class="text-green">{{ flashMessage('success') }}</h1>
+        <span class="heading text-green">{{ flashMessage('success') }}</span>
         @endif
       <form method="POST" action="/contact">
         {{ csrfField() }}
@@ -35,7 +35,7 @@
         <div class="input-group mb-3">
           <input type="text" name="captcha" class="form-control" placeholder="" aria-label="Captcha" aria-describedby="button-addon2" value="" autocomplete="off">
           <div class="input-group-append" tabindex="-1">
-            <img src="/captcha/{{ ts }}" />
+            <img src="/captcha/{{ ts }}" alt="Captcha Field"/>
           </div>
         </div> 
         <input type="hidden" name="tool" value="contact"/>
