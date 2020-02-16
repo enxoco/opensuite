@@ -35,8 +35,10 @@ Route.on('/shorts').render('shorts.home')
 |
 |*/
 
+Route.get('/decode', 'SnapController.decode')
 Route.get('/snaps/:id', 'SnapController.GetSnap')
 Route.post('/snaps', 'SnapController.PostSnap')
+Route.post('/api/snaps', 'SnapController.PostSnapApi')
 Route.on('/snaps').render('snaps.home')
 
 /*
@@ -56,3 +58,4 @@ Route.on('/contact').render('contact')
 
 Route.on('/').render('welcome')
 
+Route.on('/robots.txt')

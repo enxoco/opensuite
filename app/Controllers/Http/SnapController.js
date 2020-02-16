@@ -48,6 +48,13 @@ class SnapController {
             return view.render('snaps.home', {secret: 'Sorry this secret does not exist'})
         }
     }
+
+    async decode({request, response, view, params}){
+        let secret = Encryption.decrypt('261eed92aea409ac52a6825d184bc63ccTve7Sr2JSzZ+dNeGgUsJg==')
+        console.log(`secret ${secret}`)
+
+        return secret
+    }
 }
 
 module.exports = SnapController
