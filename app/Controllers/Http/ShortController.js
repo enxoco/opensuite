@@ -12,11 +12,16 @@ class ShortController {
         const urlStr = hashids.encode(Number(id))
         await Redis.set(urlStr, short)
 
-        session.flash({ linkUrl: `https://nxone.co/s/${urlStr}` })
+
         if (uPath.includes('api')) {
-            return response.json({ 'url': urlStr })
+            console.log(urlStr)
+
+            return response.json({url: urlStr})
+        } else {
+            session.flash({ linkUrl: `https://nxone.co/s/${urlStr}` })
+            return response.redirect('back')
+
         }
-        return response.redirect('back')
     }
 
     async GetShort({ response, view, params }) {

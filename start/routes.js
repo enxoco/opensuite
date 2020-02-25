@@ -23,6 +23,7 @@ const Route = use('Route')
 
 Route.get('/s/:id', 'ShortController.GetShort')
 Route.post('/shorts', 'ShortController.PostShort')
+Route.post('/api/shorts', 'ShortController.PostShort')
 Route.on('/shorts').render('shorts.home')
 
 
@@ -37,6 +38,7 @@ Route.on('/shorts').render('shorts.home')
 
 Route.get('/decode', 'SnapController.decode')
 Route.get('/snaps/:id', 'SnapController.GetSnap')
+Route.get('/api/snaps/:id', 'SnapController.GetSnapApi')
 Route.post('/snaps', 'SnapController.PostSnap')
 Route.post('/api/snaps', 'SnapController.PostSnapApi')
 Route.on('/snaps').render('snaps.home')

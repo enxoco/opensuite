@@ -33,7 +33,7 @@ class SnapController {
         return response.json({'url': urlStr})
     }
 
-    async GetSnap   ({ view, params, response }) {
+    async GetSnap ({ view, params }) {
         const id = params.id
         // Get our secret message
         let mesg = await Redis.get(id)
@@ -43,9 +43,25 @@ class SnapController {
         if (mesg != null){
 
             let secret = Encryption.decrypt(mesg)
-            return view.render('snaps.home', {secret})
+            return view.render('snaps.snapOnly', {secret})
         } else {
-            return view.render('snaps.home', {secret: 'Sorry this secret does not exist'})
+            return view.render('snaps.snapOnly', {secret: 'Sorry this secret does not exist'})
+        }
+    }
+
+    async GetSnapApi ({ params, response }) {
+        const id = params.id
+        // Get our secret message
+        let mesg = await Redis.get(id)
+        // Immediately delete our secret  message
+        await Redis.del(id)
+ 
+        if (mesg != null){
+
+            let secret = Encryption.decrypt(mesg)
+            return response.send({secret})
+        } else {
+            return response.send({secret: 'Sorry this secret does not exist'})
         }
     }
 
