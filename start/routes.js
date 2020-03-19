@@ -61,3 +61,6 @@ Route.on('/contact').render('contact')
 Route.on('/').render('welcome')
 
 Route.on('/robots.txt')
+Route.on('/privacy').render('privacy')
+
+Route.post('/api/telemetry', 'TelemetryController.PostTelemetry')
