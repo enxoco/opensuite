@@ -7,6 +7,7 @@ class ShortController {
 
     async PostShort({ request, response, session }) {
         const { short, captcha, ts } = request.all()
+        const host = request.headers().origin
         const uPath = request.url()
         const id = await Redis.get('hits')
         const urlStr = hashids.encode(Number(id))
@@ -18,7 +19,7 @@ class ShortController {
 
             return response.json({url: urlStr})
         } else {
-            session.flash({ linkUrl: `https://nxone.co/s/${urlStr}` })
+            session.flash({ linkUrl: `${host}/s/${urlStr}` })
             return response.redirect('back')
 
         }
