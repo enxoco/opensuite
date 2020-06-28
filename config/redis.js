@@ -32,9 +32,9 @@ module.exports = {
   |
   */
   local: {
-    host: '127.0.0.1',
-    port: 6379,
-    password: null,
+    host: 'ec2-54-221-197-13.compute-1.amazonaws.com',
+    port: 7739,
+    password: 'p64e4331fbcf857735866db57fd1a92ae95e92a351bf20e979f35c49848c4aeed',
     db: 0,
     keyPrefix: ''
   },
