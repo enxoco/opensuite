@@ -92,9 +92,9 @@ module.exports = {
   |
   */
   redis: {
-    host: ENV.get('REDIS_URL'),
-    port: ENV.get('REDIS_PORT'),
-    password: ENV.get(REDIS_PASSWORD),
+    host: Env.get('REDIS_URL'),
+    port: Env.get('REDIS_PORT'),
+    password: Env.get(REDIS_PASSWORD),
     db: 0,
     keyPrefix: ''
   }
