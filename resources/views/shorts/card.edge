@@ -7,7 +7,7 @@
   <div class="card-body">
     <p>Enter the url you would like to have shortened</p>
     @if(flashMessage('linkUrl'))
-      <span class="heading bg-green text-center">Your one time link is: <br><strong>{{ flashMessage('linkUrl') }}</strong></span>
+      <span class="heading bg-green text-center">Your shortened URL is: <br><strong><a href="{{ flashMessage('linkUrl') }}">{{ flashMessage('linkUrl') }}</a></strong></span>
     @endif
     @if(flashMessage('error'))
       <span class="heading bg-red text-center">{{ flashMessage('error') }}</span>
