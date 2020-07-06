@@ -66,7 +66,7 @@ class SnapController {
     }
 
     async decode({request, response, view, params}){
-        let secret = Encryption.decrypt('261eed92aea409ac52a6825d184bc63ccTve7Sr2JSzZ+dNeGgUsJg==')
+        let secret = Encryption.decrypt(params.mesg)
         console.log(`secret ${secret}`)
 
         return secret
