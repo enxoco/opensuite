@@ -36,7 +36,7 @@ Route.on('/shorts').render('shorts.home')
 |
 |*/
 
-Route.get('/decode', 'SnapController.decode')
+Route.get('/decode/:mesg', 'SnapController.decode')
 Route.get('/snaps/:id', 'SnapController.GetSnap')
 Route.get('/api/snaps/:id', 'SnapController.GetSnapApi')
 Route.post('/snaps', 'SnapController.PostSnap')
