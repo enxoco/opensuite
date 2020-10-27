@@ -11,7 +11,7 @@
 */
 
 const Env = use('Env')
-
+const redis_str = Env.get('REDIS_URL')
 module.exports = {
   /*
   |--------------------------------------------------------------------------
@@ -32,9 +32,9 @@ module.exports = {
   |
   */
   local: {
-    host: Env.get('REDIS_URL'),
-    port: Env.get('REDIS_PORT'),
-    password: Env.get('REDIS_PASSWORD'),
+    host: redis_str.split(':')[2].split('@')[1],
+    port: redis_str.split(':')[3],
+    password: redis_str.split(':')[2].split('@')[0],
     db: 0,
     keyPrefix: ''
   },
