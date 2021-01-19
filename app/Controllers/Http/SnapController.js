@@ -3,7 +3,7 @@ const Hashids = require('hashids/cjs')
 const hashids = new Hashids("one-time-secret", 2, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
 const Encryption = use('Encryption')
 const Redis = use('Redis')
-const Plausible = require('plausible-tracker')
+import Plausible from 'plausible-tracker'
 const plausible = Plausible({
     domain: 'theopensuite.com'
   })
