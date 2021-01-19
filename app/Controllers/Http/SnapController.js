@@ -3,11 +3,18 @@ const Hashids = require('hashids/cjs')
 const hashids = new Hashids("one-time-secret", 2, "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890");
 const Encryption = use('Encryption')
 const Redis = use('Redis')
+const Plausible = require('plausible-tracker')
+const plausible = Plausible({
+    domain: 'theopensuite.com'
+  })
+const { trackEvent } = Plausible()
 
 
 class SnapController {
 
     async PostSnap({ request, response, session }) {
+        trackEvent('Snap Created')
+
         const host = request.headers().origin
         const { secret, captcha, ts } = request.all()
         let hash = await Redis.get(ts)
@@ -24,6 +31,8 @@ class SnapController {
     }
 
     async PostSnapApi({ request, response, session }) {
+        trackEvent('Snap Created')
+
         const host = request.headers().origin
         const { secret } = request.all()
         const id = await Redis.get('hits')
@@ -34,6 +43,8 @@ class SnapController {
     }
 
     async GetSnap ({ view, params }) {
+        trackEvent('Snap Viewed')
+
         const id = params.id
         // Get our secret message
         let mesg = await Redis.get(id)
@@ -50,6 +61,8 @@ class SnapController {
     }
 
     async GetSnapApi ({ params, response }) {
+        trackEvent('Snap Viewed')
+
         const id = params.id
         // Get our secret message
         let mesg = await Redis.get(id)
